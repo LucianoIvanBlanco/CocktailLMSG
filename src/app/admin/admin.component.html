@@ -1,0 +1,34 @@
+<h3>Esta es la web para admin!</h3>
+
+<div class = "container">
+
+        <h4>Añade platos al menu:</h4>
+    <form class="input-group mb-3" [formGroup]= "menuForm">
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Plato</span>
+            <input formControlName="plato" type="text" class="form-control" placeholder="Ingrese el plato">
+        </div>
+
+
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">Ingredientes</span>
+            <input formControlName="ingrediente" type="text" class="form-control" placeholder="Ingrese los ingredientes">
+        </div>
+
+
+        <div class="input-group mb-3">
+            <input formControlName="precio" type="text" class="form-control" placeholder="Ingrese el precio" >
+            <button (click)="sendData()" class="btn btn-outline-secondary" type="button" id="button-addon2">Agregar</button>
+        </div>
+    </form>
+
+    <div *ngIf="isError" class="alert alert-danger" role="alert">
+        Ha pasado algo!
+    </div>
+
+    <ul class="list-group">
+        <li *ngFor="let item of arrPlatos" class="list-group-item">#{{item.id}} {{item.plato}} - {{item.ingrediente}} - {{item.precio}} <button type="button" (click)="deletePlato(item.id)" class="btn btn-danger">Eliminar</button>
+        </li>
+    </ul>
+
+</div>

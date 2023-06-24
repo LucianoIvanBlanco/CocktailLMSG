@@ -1,0 +1,10 @@
+<h1>Bienvenidos a mi restaurante!!</h1>
+<br><br>
+<h3>Aqui tienes el menu: </h3>
+<br><br>
+
+<div>
+    <ul class="list-group">
+        <li class="list-group-item disabled" aria-disabled="true" *ngFor="let plato of arrCarta"> {{plato.nombre}} - {{plato.ingrediente}} - {{plato.precio}} </li>
+    </ul>
+</div>
